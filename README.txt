@@ -1,0 +1,6 @@
+1 - No arquivo loginKD, adicione os dados para login no KD
+2 - Coloque na mesma pasta o arquivo json.txt da outra automação
+3 - A task será criada na 1º coluna do KB
+4 - Em caso de outros teste, delete primeiro o arquivo kb.txt que será gerado
+5 - Execute o main.js comando "node main.js"
+6 - No arquivo main.js na linha 8 coloque o link para a página de login do KB
