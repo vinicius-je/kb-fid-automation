@@ -37,14 +37,18 @@ async function createTask(page){
     const idAddTaskBtn = '.board-add-icon';
     const idFormTitle = '#form-title';
     const idTextArea = 'textarea[name=description]';
-    // const idColorSelection = '.select2-selection__arrow';
-    // const idColor = '#select2-form-color_id-result-88db-green'
+    const idTaskColor = '#form-color_id'
+    const idTaskColumn = '#form-column_id';
+    const idTaskTags = '#form-tags'
     const idSaveBtn = '.btn-blue';
    (async () => {
       await page.waitForSelector(idDropdownInput).then(() => page.click(idDropdownInput));
       await page.waitForSelector(idDropdownOption).then(() => page.click(idDropdownOption));
       await page.waitForSelector(idProgressColumn).then(() => page.click(idAddTaskBtn));
       await page.waitForSelector(idFormTitle).then(() => page.type(idFormTitle, title));
+      await page.waitForSelector(idTaskColumn).then(() => page.select(idTaskColumn, '3'));
+      await page.waitForSelector(idTaskColor).then(() => page.select(idTaskColor, 'green'));
+      await page.waitForSelector(idTaskColor).then(() => page.select(idTaskTags, 'Access Management', 'Automatizado', process.env.APPLICATION));
       await page.waitForSelector(idTextArea).then(() => 
         // Realiza a leitura do arquivo kb.txt e adiciona o conteúdo no KB
         fs.readFile('kb.txt', 'utf-8', async (error, data) => {
