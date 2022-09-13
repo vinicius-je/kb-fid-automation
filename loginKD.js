@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 async function loginKD(page){
     //User loggin
-    const user = ''
-    const password = ''
+    let user = '81032534';
+    let password = '123456';
     //html elements
     const idUserLabel = '#form-username';
     const idPasswordLabel = '#form-password';
